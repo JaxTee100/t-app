@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-cont{
+
+    display: flex;
+    justify-content: flex-end;
+   
+}
+.icon{
+
+    border-radius: 50%;
+    color: #0e97a7;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    box-shadow: -2px -3px 4px 1px #3a3f44, 2px 2px 3px 1px #202227;
+}
+.icon-container{
+    display: flex;
+    width: 1500px;
+    justify-content: space-between;
+}
+.left{
+    
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right{
+    
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.right .img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding:5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px -3px 4px 1px #3a3f44, 2px 2px 3px 1px #202227;
+}
+.img img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+}
+
+.item-icon{
+    font-size: 24px;
+    margin-right: 25px;
+    margin-left: 10px;
+}
+
+
+
+
+
+.Sidebar{
+    background: #272727;
+    
+    display: flex;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 800ms ease;
+    z-index: 10;
+    overflow-y: scroll;
+    height: calc(100vh -50px);
+    white-space: nowrap;
+    scrollbar-color: dark;
+
+    
+    
+}
+
+
+
+
+
+
+
+  
+  .box h2{
+    margin-top: 30px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .box p{
+    color:  #0f9180;
   }
-  to {
-    transform: rotate(360deg);
+  .box span{
+    font-size: 12px;
   }
-}
+  .icon-div{
+    
+    margin-top: 20px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 3px 3px 4px black, -3px -3px 3px #3b3f43;
+  }
+  
