@@ -1,27 +1,17 @@
-import React from "react";
-
-
-
-import Store from "./Components/Store";
-
-
-
-
-
-
-
-
-
-const App =() => {
-
-  
-
-  return(
-    <div className="App">
-      <Store />
+import React from 'react';
+import './App.css';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './Components/Pages';
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>} exact/>
+        
+      </Routes>
      
-    </div>
-  )
+    </Router>
+  );
 }
 
 export default App;
