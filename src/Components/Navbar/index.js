@@ -13,7 +13,7 @@ const Navbar =({sidebar, adjust,button}) => {
         <NavContainer sidebar={sidebar}>
           {button ?
           <NavList>
-              <NavListItem to="/" onClick={adjust}>{sidebar ? <MdIcons.MdMenuOpen/> : <MdIcons.MdDoubleArrow />}</NavListItem>
+              <NavListItem to="/" onClick={adjust}>{sidebar ? <MdIcons.MdDoubleArrow />: <MdIcons.MdMenuOpen/> }</NavListItem>
               <NavListItem to="/"><MdIcons.MdContacts /></NavListItem>
               <NavListItemD to="/"><MdIcons.MdOutlineChat /></NavListItemD>
               <NavListItem to="/"><AiIcons.AiOutlineSetting /></NavListItem>

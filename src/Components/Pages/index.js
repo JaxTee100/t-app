@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from "react";
 import Navbar from "../Navbar";
+import Sidebar from "../Sidebar";
 
 
 const Home = () => {
 
-    const [sidebar, setSidebar] = useState(false)
+    const [sidebar, setSidebar] = useState(true)
 
     const adjust= ()=>{
         setSidebar(prev => !prev);
@@ -25,7 +26,8 @@ const Home = () => {
 
     return(
         <>
-           <Navbar sidebar={sidebar} adjust={adjust} button={button}/>
+            <Sidebar sidebar={sidebar} />
+            <Navbar sidebar={sidebar} adjust={adjust} button={button}/>
         </>
     )
 }

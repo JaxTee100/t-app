@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 export const NavContainer = styled.div`
     background-color: #272727;
     padding: 13px;
-    width: ${({sidebar}) =>(sidebar ? "80%" : "94%")};
+    width: ${({sidebar}) =>(sidebar ? "94%" : "80%")};
     
     position: fixed;
     top: 1%;
-    left: ${({sidebar}) =>(sidebar ? "19.5%" : "5%")};
+    left: ${({sidebar}) =>(sidebar ? "5%" : "19.5%")};
     border-radius: 5px;
     box-shadow: 3px 3px 4px black, -3px -3px 3px #3b3f43;
-    transition: 0.3s all ease-in-out;
-
+    transition: 0.5s all ease-in-out;
+    z-index: 10;
 
     @media screen and (max-width: 960px){
         width: 100%;

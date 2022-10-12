@@ -4,10 +4,23 @@ import * as RiIcons from "react-icons/ri"
 import * as MdIcons from "react-icons/md"
 import * as TiIcons from "react-icons/ti"
 import * as BiIcons from "react-icons/bi"
+import * as HiIcons from "react-icons/hi"
+import { 
+  SidebarContainer, 
+  SidebarLogo, 
+  Logo, 
+  LogoTitle, 
+  SidebarTag, 
+  SidebarTitle, 
+  SidebarItems, 
+  SidebarLinkTitle, 
+  SidebarLink,
+  SidebarDropdown,
+  Tag 
+} from "./SidebarElements";
 
 
-
-const Sidebar = () =>{
+const Sidebar = ({sidebar}) =>{
 
 
 const [caretDown1, setCaretDown1] = React.useState(true)
@@ -32,30 +45,30 @@ const caretClick5 = () => {
 }
 const [caretDown6, setCaretDown6] = React.useState(false)
 const caretClick6 = () => {
- setCaretDown4(prev =>!prev)
+ setCaretDown6(prev =>!prev)
 }
 const [caretDown7, setCaretDown7] = React.useState(false)
 const caretClick7 = () => {
- setCaretDown4(prev =>!prev)
+ setCaretDown7(prev =>!prev)
 }
 
 
 
   return(
     <>
-    <SidebarLogo>
+      
+    <SidebarContainer sidebar={sidebar}>
+      <SidebarLogo sidebar={sidebar}>
         <Logo src="./images/vlogo2.png" alt="img" />
-        <LogoTitle>Vuse Admin</LogoTitle>
+        { !sidebar && <LogoTitle sidebar={sidebar}>Vuse Admin</LogoTitle>}
       </SidebarLogo>
-    <SidebarContainer>
-
       
 
       <SidebarItems>
         <SidebarLink>
-          <RiIcons.RiDashboardFill/>
+          <SidebarTag><RiIcons.RiDashboardFill/></SidebarTag>
           <SidebarLinkTitle className="light-blue">Dashboard</SidebarLinkTitle>
-          {caretDown1 ? <AiIcons.AiFillCaretUp onClick={caretClick1}/>:<AiIcons.AiFillCaretDown className="caret-pos" onClick={caretClick1}/>}
+          {caretDown1 ? <AiIcons.AiFillCaretUp className="caret-pos" onClick={caretClick1}/>:<AiIcons.AiFillCaretDown className="caret-pos" onClick={caretClick1}/>}
         </SidebarLink>
 
         {caretDown1 && <SidebarLink>
@@ -72,38 +85,38 @@ const caretClick7 = () => {
         </SidebarLink>
 
         
-          <SidebarTitle>App</SidebarTitle>
+          <SidebarTitle>{!sidebar ? "App" : <HiIcons.HiDotsHorizontal />}</SidebarTitle>  
           <SidebarLink>
-            <MdIcons.MdContacts />
+            <SidebarTag><MdIcons.MdContacts /></SidebarTag>
             <SidebarLinkTitle>Analytical</SidebarLinkTitle>
           </SidebarLink>
           <SidebarLink>
-            <AiIcons.AiOutlineMessage/>
+            <SidebarTag><AiIcons.AiOutlineMessage/></SidebarTag>
             <SidebarLinkTitle>Chat</SidebarLinkTitle>
           </SidebarLink>
             
           
         
 
-        <SidebarTitle>Style & User Interface</SidebarTitle>
+          <SidebarTitle>{!sidebar ? "Style & User Interface" : <HiIcons.HiDotsHorizontal />}</SidebarTitle>
         <SidebarLink>
-          <MdIcons.MdOutlineColorLens/>
+          <SidebarTag><MdIcons.MdOutlineColorLens/></SidebarTag>
           <SidebarLinkTitle>Color</SidebarLinkTitle>
         </SidebarLink>
         
       
           <SidebarLink>
-            <AiIcons.AiOutlinePicture/>
+            <SidebarTag><AiIcons.AiOutlinePicture/></SidebarTag>
             <SidebarLinkTitle>Icons</SidebarLinkTitle>
           </SidebarLink>
 
           <SidebarLink>
-            <AiIcons.AiOutlineQuestionCircle className="icon"/>
+            <SidebarTag><AiIcons.AiOutlineQuestionCircle/></SidebarTag>
             <SidebarLinkTitle>Helpers</SidebarLinkTitle>
           </SidebarLink>
 
           <SidebarLink>
-            <AiIcons.AiOutlineBorderHorizontal className="icon"/>
+            <SidebarTag><AiIcons.AiOutlineBorderHorizontal/></SidebarTag>
             <SidebarLinkTitle>Border Radius</SidebarLinkTitle>
             <Tag>new</Tag>
           </SidebarLink>
@@ -114,7 +127,7 @@ const caretClick7 = () => {
             <Tag>new</Tag>
           </SidebarLink>
           <SidebarLink>
-            <AiIcons.AiOutlinePlaySquare className="icon"/>
+            <SidebarTag><AiIcons.AiOutlinePlaySquare/></SidebarTag>
             <SidebarLinkTitle>Motion</SidebarLinkTitle>
           </SidebarLink>
           <SidebarLink>
@@ -122,7 +135,7 @@ const caretClick7 = () => {
             <SidebarLinkTitle>Programmatic Scrolling</SidebarLinkTitle>
           </SidebarLink>
           <SidebarLink>
-            <AiIcons.AiOutlineForm/>
+            <SidebarTag><AiIcons.AiOutlineForm/></SidebarTag>
             <SidebarLinkTitle>Forms</SidebarLinkTitle>
           </SidebarLink>
         
@@ -130,27 +143,27 @@ const caretClick7 = () => {
         
           <SidebarTitle>Pages</SidebarTitle>
           <SidebarLink>
-          <MdIcons.MdPeopleOutline/>
+          <SidebarTag><MdIcons.MdPeopleOutline/></SidebarTag>
             <SidebarLinkTitle>Profile</SidebarLinkTitle>
           </SidebarLink>
           <SidebarLink>
-            <MdIcons.MdOutlineTimer className="icon"/>
+            <SidebarTag><MdIcons.MdOutlineTimer /></SidebarTag>
             <SidebarLinkTitle>Coming Soon</SidebarLinkTitle>
           </SidebarLink>
         
           <SidebarLink>
-            <TiIcons.TiSpannerOutline />
+            <SidebarTag><TiIcons.TiSpannerOutline /></SidebarTag>
             <SidebarLinkTitle>Maintenance</SidebarLinkTitle>
           </SidebarLink>
 
       
           <SidebarLink>
-            <AiIcons.AiFillLock />
+            <SidebarTag><AiIcons.AiFillLock /></SidebarTag>
             <SidebarLinkTitle>Authentication</SidebarLinkTitle>
             {
               caretDown2 ?
-              <AiIcons.AiFillCaretUp onClick={caretClick2}/> 
-              :<AiIcons.AiFillCaretDown onClick={caretClick2}/>
+              <AiIcons.AiFillCaretUp onClick={caretClick2} className="caret-pos"/> 
+              :<AiIcons.AiFillCaretDown onClick={caretClick2} className="caret-pos"/>
             }
           </SidebarLink>
           {
@@ -168,12 +181,12 @@ const caretClick7 = () => {
           }
 
           <SidebarLink>
-            <MdIcons.MdOutlineErrorOutline className="icon"/>
-            <h3>Error</h3>
+            <SidebarTag><MdIcons.MdOutlineErrorOutline /></SidebarTag>
+            <SidebarLinkTitle>Error</SidebarLinkTitle>
             {
             caretDown3 ? 
-              <AiIcons.AiFillCaretUp onClick={caretClick3}/> : 
-              <AiIcons.AiFillCaretDown onClick={caretClick3}/>
+              <AiIcons.AiFillCaretUp onClick={caretClick3} className="caret-pos"/> : 
+              <AiIcons.AiFillCaretDown onClick={caretClick3} className="caret-pos"/>
             }
           </SidebarLink>
           {
@@ -194,19 +207,19 @@ const caretClick7 = () => {
         
           <SidebarTitle>UI Components</SidebarTitle>
           <SidebarLink>
-            <BiIcons.BiBarChartSquare/>
-            <SidebarTag>Charts</SidebarTag>
+            <SidebarTag><BiIcons.BiBarChartSquare/></SidebarTag>
+            <SidebarLinkTitle>Charts</SidebarLinkTitle>
             {
               caretDown4 ? 
-              <AiIcons.AiFillCaretUp onClick={caretClick4}/> : 
-              <AiIcons.AiFillCaretDown onClick={caretClick4}/>
+              <AiIcons.AiFillCaretUp onClick={caretClick4} className="caret-pos"/> : 
+              <AiIcons.AiFillCaretDown onClick={caretClick4} className="caret-pos"/>
             }
           </SidebarLink>
           {
             caretDown4 && 
             <SidebarDropdown>
               <SidebarLink>
-                <SidebarTag className="icon">LO</SidebarTag>
+                <SidebarTag>LO</SidebarTag>
                 <SidebarLinkTitle>Login</SidebarLinkTitle>
               </SidebarLink>
               <SidebarLink>
@@ -217,12 +230,12 @@ const caretClick7 = () => {
           }
 
           <SidebarLink>
-            <RiIcons.RiDashboardFill />
+            <SidebarTag><RiIcons.RiDashboardFill /></SidebarTag>
             <SidebarLinkTitle>Widgets</SidebarLinkTitle>
             {
               caretDown5 ? 
-              <AiIcons.AiFillCaretUp onClick={caretClick5}/> : 
-              <AiIcons.AiFillCaretDown onClick={caretClick5}/>
+              <AiIcons.AiFillCaretUp onClick={caretClick5} className="caret-pos"/> : 
+              <AiIcons.AiFillCaretDown onClick={caretClick5} className="caret-pos"/>
             }
           </SidebarLink>
           {
@@ -239,7 +252,7 @@ const caretClick7 = () => {
             </SidebarDropdown>
           }
           <SidebarLink>
-            <RiIcons.RiDashboardFill />
+            <SidebarTag><RiIcons.RiDashboardFill /></SidebarTag>
             <SidebarLinkTitle>Vuetify</SidebarLinkTitle>
             {caretDown6 ? <AiIcons.AiFillCaretUp className="caret-pos" onClick={caretClick6}/> : <AiIcons.AiFillCaretDown className="caret-pos" onClick={caretClick6}/>}
           </SidebarLink>
